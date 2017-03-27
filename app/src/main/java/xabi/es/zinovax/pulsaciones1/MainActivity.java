@@ -1,6 +1,7 @@
 package xabi.es.zinovax.pulsaciones1;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -41,7 +42,17 @@ public class MainActivity extends Activity {
     public void mostrarResultado(){
         TextView valtexto = (TextView)findViewById(R.id.contadorvalor);
 
+        if (contador > 0 ) {
+            valtexto.setTextColor(Color.GREEN);
+        }else if (contador == 0) {
+            valtexto.setTextColor(Color.BLUE);
+        } else {
+            valtexto.setTextColor(Color.RED);
+        }
+
+            //Metemos un blano por delante de la variable contador, si no el setText da error
         valtexto.setText("" + contador);
+
     }
 
 }
